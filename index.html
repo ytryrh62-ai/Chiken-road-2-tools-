@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chicken Road 2 Predictor</title>
+<style>
+*{
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top,#1a2a3a,#050b12);
+    color:white;
+}
+.app{
+    width:340px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 0 25px rgba(0,255,204,0.25);
+    border:1px solid rgba(255,255,255,0.1);
+}
+.header{
+    text-align:center;
+    margin-bottom:15px;
+}
+.header h1{
+    margin:0;
+    font-size:22px;
+    color:#00ffd5;
+    letter-spacing:1px;
+}
+.header p{
+    margin:4px 0 0;
+    font-size:12px;
+    color:#aaa;
+}
+.prediction-card{
+    margin:18px 0;
+    padding:25px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#00ffd5,#00b3ff);
+    color:#000;
+    text-align:center;
+    font-size:34px;
+    font-weight:800;
+    box-shadow:0 0 20px rgba(0,255,204,0.6);
+    transition:transform 0.2s ease;
+}
+.prediction-card.animate{
+    transform:scale(1.05);
+}
+.btn{
+    width:100%;
+    padding:14px;
+    font-size:16px;
+    font-weight:700;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#00ffd5,#00b3ff);
+    color:#000;
+    box-shadow:0 0 15px rgba(0,255,204,0.6);
+}
+.btn:active{
+    transform:scale(0.96);
+}
+.telegram-box{
+    margin-top:16px;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.06);
+    text-align:center;
+    font-size:13px;
+}
+.telegram-box a{
+    color:#00ffd5;
+    text-decoration:none;
+    font-weight:600;
+}
+.footer{
+    text-align:center;
+    margin-top:10px;
+    font-size:11px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+    <div class="header">
+        <h1>🐔 Chicken Road 2 Predictor</h1>
+        <p>Premium Prediction Tool</p>
+    </div>
+
+    <div class="prediction-card" id="prediction">
+        READY
+    </div>
+
+    <button class="btn" onclick="nextPrediction()">Next Prediction</button>
+
+    <div class="telegram-box">
+        🔗 <a href="https://t.me/+K-dnxwm8dghjODM9" target="_blank">Join Telegram</a><br>
+        📢 @dxzofficial
+    </div>
+
+    <div class="footer">
+        For Entertainment Only
+    </div>
+</div>
+
+<script>
+const multiples = [
+"1.02X","1.14X","1.21X","1.29X","1.37X","1.46X","1.56X","1.67X","1.80X",
+"1.94X","2.09X","2.26X","2.47X","2.69X","2.95X","3.24X","3.58X",
+"3.98X","4.45X"
+];
+
+function nextPrediction(){
+    const box = document.getElementById("prediction");
+    const randomIndex = Math.floor(Math.random() * multiples.length);
+    box.innerText = multiples[randomIndex];
+    box.classList.remove("animate");
+    void box.offsetWidth;
+    box.classList.add("animate");
+}
+</script>
+</body>
+</html>
